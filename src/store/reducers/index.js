@@ -1,6 +1,7 @@
 const initialState = {
     questions: [],
-    correct: 0
+    correct: 0,
+    playerName: ''
 }
 
 export default function reducer(state = initialState, action) {
@@ -13,6 +14,9 @@ export default function reducer(state = initialState, action) {
         return newState
     } else if (action.type === 'RESET_CORRECT') {
         newState.correct = 0
+        return newState
+    } else if (action.type === 'SET_NAME') {
+        newState.playerName = action.payload
         return newState
     } else {
         return state

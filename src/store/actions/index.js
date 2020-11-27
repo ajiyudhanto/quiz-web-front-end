@@ -22,8 +22,9 @@ function resetCorrect () {
 export function getQuestions () {
     return (dispatch) => {
         axios.get('http://localhost:3000/all')
-        .then(data => {
-            console.log(data)
+        .then(res => {
+            console.log(res.data.questions)
+            dispatch(setQuestions(res.data.questions))
         })
         .catch(err => {
             console.log(err)
