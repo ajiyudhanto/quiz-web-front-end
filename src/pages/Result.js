@@ -22,22 +22,27 @@ export default function Result () {
             <Container>
                 <Row>
                     <Col>
-                        <h1>Selamat {playerName}!</h1>
+                        <h1 className='text-center result-congrats'>Selamat <span className='gold-text'>{playerName}</span>!</h1>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                        <h2>Kamu telah menyelesaikan tantangan ini!</h2>
+                        <h2 className='text-center result-explanation'>Kamu telah menyelesaikan tantangan ini!</h2>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                        <h2>Final score kamu adalah: { score } / 10</h2>
+                        <h2 className='text-center result-explanation'>Final score kamu adalah:</h2>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                        <Button onClick={ () => backToHomePage() }>Kembali ke halaman home</Button>
+                        <h2 className='text-center result-score'><span className='gold-text'>{ score }</span> / 10</h2>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col className='col-center'>
+                        <Button onClick={ () => backToHomePage() } variant='gold' className='back-home-btn'>Kembali Ke Halaman Home</Button>
                     </Col>
                 </Row>
             </Container>

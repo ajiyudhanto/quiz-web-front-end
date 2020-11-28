@@ -42,7 +42,7 @@ export default function Home () {
                 </Row>
                 <Row>
                     <Col>
-                        <p className='text-center ask-name'>Halo, nama saya <span className='ask-name bentala'>Bentala</span>, kalau nama kamu siapa?</p>
+                        <p className='text-center ask-name'>Halo, nama saya <span className='ask-name gold-text'>Bentala</span>, kalau nama kamu siapa?</p>
                     </Col>
                 </Row>
                 <Row>

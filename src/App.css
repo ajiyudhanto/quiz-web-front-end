@@ -56,7 +56,7 @@
   margin-bottom: 3%;
 }
 
-.bentala {
+.gold-text {
   color: #A88D6F !important;
 }
 
@@ -130,4 +130,25 @@
 .choice-row {
   padding-left: 15%;
   padding-right: 15%;
+}
+
+.result-congrats {
+  font-weight: bolder;
+  font-size: 500%;
+  margin-top: 8%;
+}
+
+.result-explanation {
+  font-weight: bolder;
+  font-size: 200%;
+}
+
+.result-score {
+  font-weight: bolder;
+  font-size: 700%;
+  margin-bottom: 5%;
+}
+
+.back-home-btn {
+  font-size: 150% !important;
 }
