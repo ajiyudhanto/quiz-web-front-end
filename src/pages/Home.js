@@ -47,7 +47,12 @@ export default function Home () {
                 </Row>
                 <Row>
                     <Col className='col-center'>
-                        <input onChange={ (event) => nameOnChange(event) } value={ name } className='input-name' placeholder='nama saya adalah...' />
+                        <input 
+                            onChange={ (event) => nameOnChange(event) }
+                            value={ name }
+                            className='input-text'
+                            placeholder='nama saya adalah...' 
+                        />
                     </Col>
                 </Row>
                 <Row>

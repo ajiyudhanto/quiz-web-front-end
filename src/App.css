@@ -60,7 +60,7 @@
   color: #A88D6F !important;
 }
 
-.input-name {
+.input-text {
   background-color: transparent;
   border-color: #A88D6F;
   text-align: center;
@@ -70,6 +70,10 @@
   border-right: 0;
   border-width: 3px;
   margin-bottom: 3%;
+}
+
+.answer {
+  font-size: 150%;
 }
 
 .btn-gold {

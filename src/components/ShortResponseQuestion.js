@@ -31,25 +31,29 @@ export default function ShortResponseQuestion (props) {
 
     return (
         <>
-            {
-                question.img_url ?  
-                    <Row>
-                        <Col>
-                            <Image src={ question.img_url } />
-                        </Col>
-                    </Row> : ''
-            }
             <Row>
-                <Col>
-                    <p>{ question.question }</p>
+                <Col className='col-center'>
+                    <Image className='img-question' src={ question.img_url } />
                 </Col>
             </Row>
             <Row>
                 <Col>
-                    <input onChange={ (event) => answerOnChange(event) } value={ answer } />
+                    <p className='text-center question'>{ question.question }</p>
                 </Col>
-                <Col>
-                    <Button onClick={ () => submit() }>Submit</Button>
+            </Row>
+            <Row>
+                <Col className='col-center'>
+                    <input 
+                        onChange={ (event) => answerOnChange(event) }
+                        value={ answer } 
+                        className='input-text answer'  
+                        placeholder='Jawaban saya adalah...'    
+                    />
+                </Col>
+            </Row>
+            <Row>
+                <Col className='col-center'>
+                    <Button onClick={ () => submit() } variant='gold'>Submit</Button>
                 </Col>
             </Row>
         </>
