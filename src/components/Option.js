@@ -23,8 +23,8 @@ export default function Option (props) {
 
     return (
         <>
-            <Col xs={6}>
-                <p onClick={ () => scoring() }>{ choice }</p>
+            <Col className='choice-col' xs={6}>
+                <p onClick={ () => scoring() } className='text-center choice'>{ choice }</p>
             </Col>
         </>
     )

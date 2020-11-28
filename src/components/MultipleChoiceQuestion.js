@@ -16,20 +16,17 @@ export default function MultipleChoiceQuestion (props) {
 
     return (
         <>
-            {
-                question.img_url ?  
-                    <Row>
-                        <Col>
-                            <Image src={ question.img_url } />
-                        </Col>
-                    </Row> : ''
-            }
             <Row>
-                <Col>
-                    <p>{ question.question }</p>
+                <Col className='col-center'>
+                    <Image className='img-question' src={ question.img_url } />
                 </Col>
             </Row>
             <Row>
+                <Col>
+                    <p className='text-center question'>{ question.question }</p>
+                </Col>
+            </Row>
+            <Row className='choice-row'>
                {
                    options.map((option, index) => {
                        return <Option choice={ option[0] } correctness={ option[1] } key={ index } />
