@@ -15,7 +15,11 @@ export default function Home () {
     }, [])
 
     function nameOnChange (event) {
-        setName(event.target.value)
+        if (event.target.value.length > 10) {
+
+        } else {
+            setName(event.target.value)
+        }
     }
 
     function startPlay () {

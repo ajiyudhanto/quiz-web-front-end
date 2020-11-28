@@ -93,6 +93,10 @@
 .img-question {
   margin-top: 5%;
   margin-bottom: 3%;
+  border: 5px solid #A88D6F;
+  border-top: 0;
+  border-bottom: 0;
+  padding: 15px;
   border-radius: 10px;
   width: 45%;
   max-height: 250px;
@@ -151,4 +155,42 @@
 
 .back-home-btn {
   font-size: 150% !important;
+}
+
+.stat-title-container {
+  position: absolute;
+  margin-top: 9.5% !important;
+  left: 10%;
+}
+
+.stat-title {
+  font-size: 25px;
+  color: #A88D6F;
+}
+
+.stat-container {
+  position: absolute;
+  color: #212020;
+  font-size: 20px;
+  min-width: 250px;
+  padding: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-top: 11%;
+  background:
+    linear-gradient(to right, #A88D6F 4px, transparent 4px) 0 0,
+    linear-gradient(to right, #A88D6F 4px, transparent 4px) 0 100%,
+    linear-gradient(to left, #A88D6F 4px, transparent 4px) 100% 0,
+    linear-gradient(to left, #A88D6F 4px, transparent 4px) 100% 100%,
+    linear-gradient(to bottom, #A88D6F 4px, transparent 4px) 0 0,
+    linear-gradient(to bottom, #A88D6F 4px, transparent 4px) 100% 0,
+    linear-gradient(to top, #A88D6F 4px, transparent 4px) 0 100%,
+    linear-gradient(to top, #A88D6F 4px, transparent 4px) 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+}
+
+.stat-text {
+  font-weight: bold;
+  margin: 0 !important;
 }
