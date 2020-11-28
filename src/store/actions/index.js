@@ -7,15 +7,29 @@ function setQuestions (payload) {
     }
 }
 
-function addCorrect () {
+export function addCorrect () {
     return {
         type: 'ADD_CORRECT'
     }
 }
 
-function resetCorrect () {
+export function resetCorrect () {
     return {
         type: 'RESET_CORRECT'
+    }
+}
+
+export function setPlayerName (payload) {
+    return {
+        type: 'SET_PLAYER_NAME',
+        payload
+    }
+}
+
+export function setQuestionsIndex (payload) {
+    return {
+        type: 'SET_QUESTIONS_INDEX',
+        payload
     }
 }
 
