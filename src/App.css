@@ -1,38 +1,77 @@
 .App {
   text-align: center;
+  background-color: #F6F5F1;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.col-center {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+  background-color: #F6F5F1 !important;
+  width: 100vw;
+  height: 100vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.text-center {
+  text-align: center;
+}
+
+.title {
+  padding-top: 10%;
+  font-weight: bolder;
+  font-family: fantasy;
+  font-size: 150px;
+  color: #A88D6F;
+  margin-bottom: 5%;
+}
+
+.sub-title {
+  margin: 0px;
+  color: #A88D6F;
+  padding-top: 17%;
+  font-size: 50px;
+  font-style: italic;
+  font-weight: bolder;
+  font-family: fantasy;
+  position: absolute;
+  left: 45%;
+}
+
+.ask-name {
+  font-size: 25px;
+  color: #212020;
+  font-weight: bold;
+  margin-bottom: 3%;
+}
+
+.bentala {
+  color: #A88D6F !important;
+}
+
+.input-name {
+  background-color: transparent;
+  border-color: #A88D6F;
+  text-align: center;
+  font-weight: bold;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-width: 3px;
+  margin-bottom: 3%;
+}
+
+.btn-gold {
+  background-color: #A88D6F !important;
+  border-color: #A88D6F !important;
+  border-width: 2px !important;
+  color: #F6F5F1 !important;
+  font-weight: bold !important;
+  transition: 2ms;
+}
+
+.btn-gold:hover {
+  background-color: #F6F5F1 !important;
+  color: #A88D6F !important;
 }

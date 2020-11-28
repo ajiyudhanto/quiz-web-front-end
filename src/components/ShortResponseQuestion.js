@@ -21,6 +21,7 @@ export default function ShortResponseQuestion (props) {
         if (inputAnswer === correctAnswer) {
             dispatch(addCorrect())
         }
+        setAnswer('')
         if (questionsIndex === 9) {
             history.push('/result')
         } else {

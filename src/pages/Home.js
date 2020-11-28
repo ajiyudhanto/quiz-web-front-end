@@ -11,6 +11,7 @@ export default function Home () {
 
     useEffect(() => {
         dispatch(getQuestions())
+        // eslint-disable-next-line
     }, [])
 
     function nameOnChange (event) {
@@ -30,28 +31,28 @@ export default function Home () {
         <>
             <Container>
                 <Row>
-                    <Col>
-                        <h4>Tebak</h4>
+                    <Col xs={6}>
+                        <h4 className='text-center sub-title'>Tebak</h4>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                        <h1>KataKota</h1>
+                        <h1 className='text-center title'>KataKota</h1>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                        <p>Siapa namamu?</p>                    
+                        <p className='text-center ask-name'>Halo, nama saya <span className='ask-name bentala'>Bentala</span>, kalau nama kamu siapa?</p>
                     </Col>
                 </Row>
                 <Row>
-                    <Col>
-                        <input onChange={ (event) => nameOnChange(event) } value={ name } placeholder='nama saya adalah...' />
+                    <Col className='col-center'>
+                        <input onChange={ (event) => nameOnChange(event) } value={ name } className='input-name' placeholder='nama saya adalah...' />
                     </Col>
                 </Row>
                 <Row>
-                    <Col>
-                        <Button onClick={ () => startPlay() }>Mulai Permainan</Button>
+                    <Col className='col-center'>
+                        <Button onClick={ () => startPlay() } variant='gold'>Mulai Bermain!</Button>
                     </Col>
                 </Row>
             </Container>
