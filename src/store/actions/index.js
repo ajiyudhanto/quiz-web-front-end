@@ -41,7 +41,7 @@ export function switchIsAnswered () {
 
 export function getQuestions () {
     return (dispatch) => {
-        axios.get('http://localhost:3000/all')
+        axios.get('https://tebak-katakota.herokuapp.com/all')
         .then(res => {
             console.log(res.data.questions)
             dispatch(setQuestions(res.data.questions))
