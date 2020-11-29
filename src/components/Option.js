@@ -9,7 +9,6 @@ export default function Option (props) {
     const isAnswered = useSelector(state => state.isAnswered)
 
     function scoring () {
-        console.log(isAnswered)
         if (correctness === 'correct') {
             dispatch(addCorrect())
         }

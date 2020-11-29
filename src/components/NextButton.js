@@ -29,7 +29,7 @@ export default function NextButton () {
                 </Row>
                 <Row>
                     <Col>
-                        <p onClick={ () => next() } className='next-text'>Pertanyaan Selanjutnya</p>
+                        <p onClick={ () => next() } className='next-text'>{ questionsIndex === 9 ? 'Lihat Hasil Akhir' : 'Pertanyaan Selanjutnya' }</p>
                     </Col>
                 </Row>
             </div>
