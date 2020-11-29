@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { addCorrect, setQuestionsIndex } from '../store/actions/index'
 import { Row, Col, Image, Button } from 'react-bootstrap'
+import NextButton from '../components/NextButton'
 
 export default function ShortResponseQuestion (props) {
     const { question } = props
@@ -34,6 +35,7 @@ export default function ShortResponseQuestion (props) {
             <Row>
                 <Col className='col-center'>
                     <Image className='img-question' src={ question.img_url } />
+                    <NextButton />
                 </Col>
             </Row>
             <Row>

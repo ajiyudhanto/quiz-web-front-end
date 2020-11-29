@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { getQuestions, setPlayerName } from '../store/actions/index'
+import { getQuestions, setPlayerName, resetCorrect, setQuestionsIndex } from '../store/actions/index'
 import { Container, Row, Col, Button } from 'react-bootstrap'
 
 export default function Home () {
@@ -10,6 +10,9 @@ export default function Home () {
     const [name, setName] = useState('')
 
     useEffect(() => {
+        dispatch(resetCorrect())
+        dispatch(setPlayerName(''))
+        dispatch(setQuestionsIndex(0))
         dispatch(getQuestions())
         // eslint-disable-next-line
     }, [])

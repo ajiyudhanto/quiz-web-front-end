@@ -1,6 +1,7 @@
 import React from 'react'
 import Option from '../components/Option'
 import { Row, Col, Image } from 'react-bootstrap'
+import NextButton from '../components/NextButton'
 
 export default function MultipleChoiceQuestion (props) {
     const { question } = props
@@ -19,6 +20,7 @@ export default function MultipleChoiceQuestion (props) {
             <Row>
                 <Col className='col-center'>
                     <Image className='img-question' src={ question.img_url } />
+                    <NextButton />
                 </Col>
             </Row>
             <Row>

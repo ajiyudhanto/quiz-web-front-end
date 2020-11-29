@@ -1,19 +1,14 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
-import { resetCorrect, setPlayerName, setQuestionsIndex } from '../store/actions/index'
+import { useSelector } from 'react-redux'
 import { Container, Row, Col, Button } from 'react-bootstrap'
 
 export default function Result () {
     const history = useHistory()
-    const dispatch = useDispatch()
     const playerName = useSelector(state => state.playerName)
     const score = useSelector(state => state.correct)
 
     function backToHomePage () {
-        dispatch(resetCorrect())
-        dispatch(setPlayerName(''))
-        dispatch(setQuestionsIndex(0))
         history.push('/')
     }
 
