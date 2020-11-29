@@ -72,6 +72,14 @@
   margin-bottom: 3%;
 }
 
+.input-correct {
+  border-color: #4D9C2E;
+}
+
+.input-false {
+  border-color: #CD4A4B;
+}
+
 .answer {
   font-size: 150%;
 }
@@ -84,6 +92,21 @@
   border-width: 3px;
   margin-bottom: 3%;
   min-width: 10px !important;
+}
+
+.icon {
+  position: absolute;
+  font-size: 70px;
+  bottom: 3%;
+  right: 28%;
+}
+
+.icon-correct {
+  color: #4D9C2E;
+}
+
+.icon-false {
+  color: #CD4A4B;
 }
 
 .btn-gold {

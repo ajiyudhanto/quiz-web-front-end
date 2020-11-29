@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addCorrect, switchIsAnswered } from '../store/actions/index'
 import { Row, Col, Image, Button } from 'react-bootstrap'
 import NextButton from '../components/NextButton'
+import { IoCheckmarkSharp, IoCloseSharp } from "react-icons/io5";
 
 export default function ShortResponseQuestion (props) {
     const { question } = props
@@ -10,6 +11,7 @@ export default function ShortResponseQuestion (props) {
     const isAnswered = useSelector(state => state.isAnswered)
     const [answer, setAnswer] = useState('')
     const [submitted, setSubmitted] = useState('')
+    const [isCorrect, setIsCorrect] = useState(false)
 
     function answerOnChange (event) {
         setAnswer(event.target.value)
@@ -20,6 +22,7 @@ export default function ShortResponseQuestion (props) {
         const correctAnswer = question.answer.toLowerCase()
         if (inputAnswer === correctAnswer) {
             dispatch(addCorrect())
+            setIsCorrect(true)
         }
         setSubmitted(answer)
         dispatch(switchIsAnswered())
@@ -46,10 +49,18 @@ export default function ShortResponseQuestion (props) {
             </Row>
             <Row>
                 <Col className='col-center'>
+                    {
+                        isAnswered ? 
+                            (
+                                isCorrect ?
+                                    <label className='icon icon-correct'><IoCheckmarkSharp /></label> :
+                                    <label className='icon icon-false'><IoCloseSharp /></label>
+                            ) : ''
+                    }
                     <input 
                         onChange={ (event) => answerOnChange(event) }
                         value={ isAnswered ? submitted : answer } 
-                        className='input-text answer'
+                        className={ isAnswered ? (isCorrect ? 'input-text answer input-correct' : 'input-text answer input-false') : 'input-text answer'}
                         placeholder='Jawaban saya adalah...'
                         readOnly={ isAnswered ? true : false }
                     />
