@@ -1,6 +1,7 @@
 import React from 'react'
 import { Row, Col } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
+import { IoPersonSharp, IoCheckmarkDoneSharp } from "react-icons/io5";
 
 export default function PlayerStatus () {
     const playerName = useSelector(state => state.playerName)
@@ -12,17 +13,12 @@ export default function PlayerStatus () {
             <div className='stat-container'>
                 <Row>
                     <Col>
-                        <p className='stat-text stat-title'>STATUS KAMU</p>
+                        <p className='stat-text black-text'><IoPersonSharp /> : <span className='gold-text'>{ playerName }</span></p>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                        <p className='stat-text'>Nama: { playerName }</p>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <p className='stat-text'>Skor: { correct } / { questionsIndex + 1 }</p>
+                        <p className='stat-text black-text'><IoCheckmarkDoneSharp /> : <span className='gold-text'>{ correct }</span> / { questionsIndex + 1 }</p>
                     </Col>
                 </Row>
             </div>

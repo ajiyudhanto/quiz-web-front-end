@@ -60,6 +60,10 @@
   color: #A88D6F !important;
 }
 
+.black-text {
+  color: #212020;
+}
+
 .input-text {
   background-color: transparent;
   border-color: #A88D6F;
@@ -268,8 +272,7 @@
   top: 2%;
   color: #212020;
   font-size: 20px;
-  min-width: 250px;
-  padding: 20px;
+  padding: 10px;
   padding-left: 30px;
   padding-right: 30px;
   background:
