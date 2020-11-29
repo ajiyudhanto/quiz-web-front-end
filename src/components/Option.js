@@ -1,30 +1,31 @@
 import React from 'react'
-import { useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { addCorrect, setQuestionsIndex } from '../store/actions/index'
+import { addCorrect, switchIsAnswered } from '../store/actions/index'
 import { Col } from 'react-bootstrap'
 
 export default function Option (props) {
     const { choice, correctness } = props
-    const history = useHistory()
     const dispatch = useDispatch()
-    const questionsIndex = useSelector(state => state.questionsIndex)
+    const isAnswered = useSelector(state => state.isAnswered)
 
     function scoring () {
+        console.log(isAnswered)
         if (correctness === 'correct') {
             dispatch(addCorrect())
         }
-        if (questionsIndex === 9) {
-            history.push('/result')
-        } else {
-            dispatch(setQuestionsIndex(questionsIndex + 1))
-        }
+        dispatch(switchIsAnswered())
     }
 
     return (
         <>
             <Col className='choice-col' xs={6}>
-                <p onClick={ () => scoring() } className='text-center choice'>{ choice }</p>
+                {
+                    isAnswered ? (
+                        correctness === 'correct' ? <p className='text-center result correct'>{ choice }</p> :
+                            <p className='text-center result false'>{ choice }</p>
+                    ) :
+                        <p onClick={ () => scoring() } className='text-center choice'>{ choice }</p>
+                }
             </Col>
         </>
     )

@@ -160,6 +160,39 @@
   border-bottom-left-radius: 15px;
 }
 
+.result {
+  font-size: 200%;
+  border-width: 3px !important;
+  border-style: solid;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 0px;
+  transition-duration: .2s;
+}
+
+.correct {
+  border-color: #4D9C2E !important;
+  background-color: #4D9C2E;
+  color: #F6F5F1;
+}
+
+.correct:hover {
+  background-color: #F6F5F1;
+  color: #4D9C2E;
+}
+
+.false {
+  border-color: #CD4A4B !important;
+  background-color: #CD4A4B;
+  color: #F6F5F1;
+}
+
+.false:hover {
+  background-color: #F6F5F1;
+  color: #CD4A4B;
+}
+
 .choice-row {
   padding-left: 15%;
   padding-right: 15%;

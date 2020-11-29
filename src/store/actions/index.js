@@ -33,6 +33,12 @@ export function setQuestionsIndex (payload) {
     }
 }
 
+export function switchIsAnswered () {
+    return {
+        type: 'SWITCH_IS_ANSWERED'
+    }
+}
+
 export function getQuestions () {
     return (dispatch) => {
         axios.get('http://localhost:3000/all')

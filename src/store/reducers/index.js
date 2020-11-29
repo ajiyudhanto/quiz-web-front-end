@@ -2,7 +2,8 @@ const initialState = {
     questions: [],
     correct: 0,
     playerName: '',
-    questionsIndex: 0
+    questionsIndex: 0,
+    isAnswered: false
 }
 
 export default function reducer(state = initialState, action) {
@@ -21,6 +22,9 @@ export default function reducer(state = initialState, action) {
         return newState
     } else if (action.type === 'SET_QUESTIONS_INDEX') {
         newState.questionsIndex = action.payload
+        return newState
+    } else if (action.type === 'SWITCH_IS_ANSWERED') {
+        newState.isAnswered = !newState.isAnswered
         return newState
     } else {
         return state
