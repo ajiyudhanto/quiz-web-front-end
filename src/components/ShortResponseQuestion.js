@@ -1,16 +1,15 @@
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { addCorrect, setQuestionsIndex } from '../store/actions/index'
+import { addCorrect, switchIsAnswered } from '../store/actions/index'
 import { Row, Col, Image, Button } from 'react-bootstrap'
 import NextButton from '../components/NextButton'
 
 export default function ShortResponseQuestion (props) {
     const { question } = props
     const dispatch = useDispatch()
-    const history = useHistory()
-    const questionsIndex = useSelector(state => state.questionsIndex)
+    const isAnswered = useSelector(state => state.isAnswered)
     const [answer, setAnswer] = useState('')
+    const [submitted, setSubmitted] = useState('')
 
     function answerOnChange (event) {
         setAnswer(event.target.value)
@@ -22,20 +21,22 @@ export default function ShortResponseQuestion (props) {
         if (inputAnswer === correctAnswer) {
             dispatch(addCorrect())
         }
+        setSubmitted(answer)
+        dispatch(switchIsAnswered())
         setAnswer('')
-        if (questionsIndex === 9) {
-            history.push('/result')
-        } else {
-            dispatch(setQuestionsIndex(questionsIndex + 1))
-        }
     }
 
     return (
         <>
             <Row>
                 <Col className='col-center'>
-                    <Image className='img-question' src={ question.img_url } />
-                    <NextButton />
+                    <Image 
+                        className={ isAnswered ? 'img-question img-darken' : 'img-question' } 
+                        src={ question.img_url }
+                    />
+                    {
+                        isAnswered ? <NextButton /> : ''
+                    }
                 </Col>
             </Row>
             <Row>
@@ -47,15 +48,20 @@ export default function ShortResponseQuestion (props) {
                 <Col className='col-center'>
                     <input 
                         onChange={ (event) => answerOnChange(event) }
-                        value={ answer } 
-                        className='input-text answer'  
-                        placeholder='Jawaban saya adalah...'    
+                        value={ isAnswered ? submitted : answer } 
+                        className='input-text answer'
+                        placeholder='Jawaban saya adalah...'
+                        readOnly={ isAnswered ? true : false }
                     />
                 </Col>
             </Row>
             <Row>
                 <Col className='col-center'>
-                    <Button onClick={ () => submit() } variant='gold'>Submit</Button>
+                    {
+                        isAnswered ?
+                            <p className='text-center question'>Jawaban : <span className='gold-text'>{ question.answer }</span></p> :
+                            <Button onClick={ () => submit() } variant='gold'>Submit</Button>
+                    }
                 </Col>
             </Row>
         </>

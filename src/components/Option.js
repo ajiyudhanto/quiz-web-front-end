@@ -21,7 +21,8 @@ export default function Option (props) {
             <Col className='choice-col' xs={6}>
                 {
                     isAnswered ? (
-                        correctness === 'correct' ? <p className='text-center result correct'>{ choice }</p> :
+                        correctness === 'correct' ? 
+                            <p className='text-center result correct'>{ choice }</p> :
                             <p className='text-center result false'>{ choice }</p>
                     ) :
                         <p onClick={ () => scoring() } className='text-center choice'>{ choice }</p>

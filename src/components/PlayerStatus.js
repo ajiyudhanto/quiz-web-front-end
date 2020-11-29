@@ -22,7 +22,7 @@ export default function PlayerStatus () {
                 </Row>
                 <Row>
                     <Col>
-                        <p className='stat-text'>Skor: { correct } / { questionsIndex }</p>
+                        <p className='stat-text'>Skor: { correct } / { questionsIndex + 1 }</p>
                     </Col>
                 </Row>
             </div>
