@@ -12,7 +12,7 @@ OK, lets get started:
 
     - note: before running this code, make sure you've already running your own server
 
-    - note: please refer to [this repository](https://github.com/ajiyudhanto/to-do-list-postgres) to see back-end server example
+    - note: please refer to [this repository](https://github.com/ajiyudhanto/quiz-web-back-end) to see back-end server example
 
 6. in terminal, run `npm start` or `yarn start`
 
