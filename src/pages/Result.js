@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { Container, Row, Col, Button } from 'react-bootstrap'
@@ -7,6 +7,13 @@ export default function Result () {
     const history = useHistory()
     const playerName = useSelector(state => state.playerName)
     const score = useSelector(state => state.correct)
+
+    useEffect(() => {
+        if (!playerName) {
+            history.push('/')
+        }
+        // eslint-disable-next-line
+    }, [])
 
     function backToHomePage () {
         history.push('/')
